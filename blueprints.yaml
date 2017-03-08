@@ -1,0 +1,43 @@
+name: Groove
+version: 0.9.0
+description: Adds a form action to create a Groove ticket
+icon: ticket
+author:
+  name: Benoît Rouleau
+  email: benoit.rouleau@icloud.com
+homepage: https://github.com/benface/grav-plugin-groove
+keywords: grav, plugin, groove
+bugs: https://github.com/benface/grav-plugin-groove/issues
+docs: https://github.com/benface/grav-plugin-groove/blob/master/README.md
+license: MIT
+
+dependencies:
+  - { name: form, version: '~2.0' }
+
+form:
+  validation: loose
+  fields:
+
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    api_token:
+      type: text
+      label: API Token
+
+    to:
+      type: text
+      label: Email Address
+      help: The address of your Groove Mailbox
+      
+    subject:
+      type: text
+      label: Default Subject
